@@ -14,10 +14,10 @@ def load_movies(file_path="movies.csv"):
     with open(file_path, newline="", encoding="utf-8") as csvfile:
         reader = csv.DictReader(csvfile)
         for row in reader:
-            movieid = int(row["movieid"])
+            movieId = int(row["movieId"])
             title = row["title"]
             genres = row["genres"].split("|")  # zamiana stringa na listę
-            movie = Movie(movieid, title, genres)
+            movie = Movie(movieId, title, genres)
             movies_list.append(movie)
     return movies_list
 
@@ -29,3 +29,5 @@ def get_movies():
 @app.get("/")
 def root():
     return {"hello": "world"}
+
+
